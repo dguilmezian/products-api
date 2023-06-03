@@ -19,3 +19,8 @@
 9. Ejecutar: php artisan db:seed --class=ProductsSeeder
 10. Ejecutar el comando 'php artisan serve'
 11. La API se estará ejecutando en http://localhost:8000 
+
+###Aclaraciones
+1. Se proporciona documentacion de la API en el products-api.yaml . Se puede visualizar utilizando https://editor.swagger.io/
+2. Se separaron las marcas y las categorias en clases y tablas distintas en la base de datos.
+3. Si se envia un string con una categoría que no se encuentra, se creara la misma. 
