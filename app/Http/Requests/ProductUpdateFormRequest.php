@@ -24,7 +24,6 @@ class ProductUpdateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'id'=>'required',
             'price' => 'integer',
             'price_sale' => 'integer',
             'stock' => 'integer',
@@ -34,7 +33,6 @@ class ProductUpdateFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'id'=>'ID missing',
             'price' => 'Price must be a number.',
             'price_sale' => 'Price for sale must be a number',
             'stock' => 'Stock must be a number',
