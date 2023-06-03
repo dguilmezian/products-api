@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductFormRequest;
+use App\Http\Requests\ProductUpdateFormRequest;
 use App\Models\Product;
 use App\Models\ProductsAdmin;
 use Illuminate\Http\Request;
@@ -60,11 +61,11 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param ProductUpdateFormRequest $request
+     * @param int $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, $id)
+    public function update(ProductUpdateFormRequest $request, int $id)
     {
         $data = $request->all();
         $product = Product::find($id);

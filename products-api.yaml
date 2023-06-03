@@ -1,0 +1,113 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Product API
+paths:
+  /products:
+    get:
+      summary: Obtener todos los productos
+      operationId: getProducts
+      tags:
+        - Products
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Crear un nuevo producto
+      operationId: createProduct
+      tags:
+        - Products
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              price:
+                type: number
+              price_sale:
+                type: number
+              category:
+                type: string
+              brand:
+                type: string
+              description:
+                type: string
+              image:
+                type: string
+              stock:
+                type: integer
+      responses:
+        '201':
+          description: Created
+  /products/{id}:
+    get:
+      summary: Obtener un producto por ID
+      operationId: getProductById
+      tags:
+        - Products
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+    patch:
+      summary: Actualizar un producto por ID
+      operationId: updateProductById
+      tags:
+        - Products
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              price:
+                type: number
+              price_sale:
+                type: number
+              category:
+                type: string
+              brand:
+                type: string
+              description:
+                type: string
+              image:
+                type: string
+              stock:
+                type: integer
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+    delete:
+      summary: Eliminar un producto por ID
+      operationId: deleteProductById
+      tags:
+        - Products
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
